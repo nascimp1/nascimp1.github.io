@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Gallardo Nascimento | Miami Vice Portfolio</title>
+    <title>Projects | Pedro Gallardo Nascimento</title>
     <style>
         * {
             margin: 0;
@@ -41,15 +41,6 @@
             100% { transform: translateY(50px); }
         }
 
-        /* Neon glow effect */
-        .neon-glow {
-            text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff, 0 0 30px #00ffff;
-        }
-
-        .neon-pink {
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff1493, 0 0 30px #ff00ff;
-        }
-
         /* Main content wrapper */
         .container {
             position: relative;
@@ -58,20 +49,16 @@
             margin: 0 auto;
             padding: 60px 20px;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
         }
 
         /* Header section */
         header {
             margin-bottom: 40px;
+            text-align: center;
         }
 
         h1 {
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: bold;
             background: linear-gradient(45deg, #00ffff, #ff00ff, #ff1493, #00ffff);
             background-size: 300% 300%;
@@ -101,6 +88,7 @@
         /* Navigation */
         nav {
             margin-bottom: 50px;
+            text-align: center;
         }
 
         nav a {
@@ -167,6 +155,32 @@
             line-height: 1.8;
             color: #00ffff;
             text-shadow: 0 0 5px #00ffff;
+            margin-bottom: 15px;
+        }
+
+        .project-item {
+            background: rgba(255, 0, 255, 0.05);
+            border-left: 4px solid #00ffff;
+            padding: 20px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            border-left-color: #ff00ff;
+            box-shadow: inset 0 0 20px rgba(255, 0, 255, 0.2);
+            background: rgba(255, 0, 255, 0.1);
+        }
+
+        .project-item h3 {
+            color: #ff1493;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            text-shadow: 0 0 10px #ff1493;
+        }
+
+        .project-item p {
+            margin-bottom: 10px;
         }
 
         /* Section divider */
@@ -218,6 +232,7 @@
             color: #00ffff;
             font-size: 0.9rem;
             text-shadow: 0 0 5px #00ffff;
+            text-align: center;
         }
 
         /* Responsive design */
@@ -256,20 +271,45 @@
     
     <div class="container">
         <header>
-            <h1>Pedro Gallardo Nascimento</h1>
-            <p class="subtitle">Portfolio & Projects</p>
+            <h1>Projects</h1>
+            <p class="subtitle">Featured Work & Research</p>
         </header>
 
         <nav>
+            <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
         </nav>
 
         <div class="content">
-            <h2></h2>
-            <p></p>
+            <h2>Featured Projects</h2>
+            <p>A showcase of my research, code, and creative work. From academic research to web development, each project represents a journey of learning and innovation.</p>
             <div class="divider"></div>
-            <p><strong></strong></p>
+        </div>
+
+        <div class="project-item">
+            <h3>HIST 280 Research & Work</h3>
+            <p>Academic research and coursework exploring historical topics and digital humanities approaches. This collection includes essays, analysis, and creative historical projects.</p>
+        </div>
+
+        <div class="project-item">
+            <h3>Personal Portfolio Website</h3>
+            <p>A Miami Vice-inspired personal website built with HTML, CSS, and modern web design principles. Features neon aesthetics, responsive design, and smooth animations.</p>
+        </div>
+
+        <div class="project-item">
+            <h3>Digital Projects</h3>
+            <p>Coming soon. Various digital initiatives and web development projects exploring technology, design, and creative coding.</p>
+        </div>
+
+        <div class="project-item">
+            <h3>Research Archives</h3>
+            <p>A curated collection of research papers, notes, and academic work. Each project represents deep exploration into topics of interest.</p>
+        </div>
+
+        <div class="content">
+            <h2>Coming Soon</h2>
+            <p>More projects and research work will be added regularly. Stay tuned for updates on new initiatives and completed work!</p>
         </div>
 
         <div class="social-links">
@@ -278,7 +318,7 @@
             <a href="mailto:hello@example.com" title="Email">@</a>
         </div>
 
-        <footer id="contact">
+        <footer>
             <p>&copy; 2026 Pedro Gallardo Nascimento. All rights reserved. | Made with neon dreams and code</p>
         </footer>
     </div>
