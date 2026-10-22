@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Pedro Gallardo Nascimento</title>
+    <style>
+        :root {
+            --bg-1: #f2f3f4;
+            --bg-2: #e7ebee;
+            --bg-3: #dfe5e8;
+            --stone: #2a3137;
+            --stone-2: #4f5a61;
+            --muted: #637078;
+            --line: rgba(42, 49, 55, 0.16);
+            --shadow: rgba(31, 39, 45, 0.09);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background:
+                radial-gradient(circle at top left, rgba(255,255,255,0.7), transparent 34%),
+                linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 42%, var(--bg-3) 100%);
+            color: var(--stone);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 72px 22px 48px;
+        }
+
+        .site-header {
+            border-bottom: 1px solid rgba(42, 49, 55, 0.12);
+            background: rgba(255,255,255,0.18);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+
+        .brand {
+            font-size: 0.9rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--stone);
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            padding: 10px 16px;
+            border: 1px solid rgba(42, 49, 55, 0.16);
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--stone);
+            background: rgba(255,255,255,0.16);
+            transition: all 0.35s ease;
+        }
+
+        .main-nav a:hover {
+            background: rgba(255,255,255,0.42);
+            transform: translateY(-1px);
+            box-shadow: 0 12px 30px rgba(42, 49, 55, 0.08);
+        }
+
+        .portfolio-section {
+            background: rgba(255,255,255,0.28);
+            border: 1px solid rgba(42, 49, 55, 0.12);
+            border-radius: 22px;
+            padding: 30px 32px;
+            box-shadow: 0 20px 50px var(--shadow);
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-section::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto auto 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(42, 49, 55, 0.22), transparent);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.72rem;
+            letter-spacing: 0.22rem;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(2.3rem, 5vw, 3.4rem);
+            line-height: 1.05;
+            font-weight: 600;
+            letter-spacing: -0.08em;
+            color: var(--stone);
+            margin-bottom: 1rem;
+        }
+
+        .project-note {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(42, 49, 55, 0.12);
+            color: var(--stone-2);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .portfolio-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0 0;
+            border-top: 1px solid rgba(42, 49, 55, 0.12);
+        }
+
+        .portfolio-list li {
+            min-height: 3rem;
+            border-bottom: 1px solid rgba(42, 49, 55, 0.12);
+        }
+
+        @media (max-width: 700px) {
+            .nav-wrap {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <div class="brand">Pedro Gallardo Nascimento</div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <section class="portfolio-section">
+            <p class="eyebrow">Portfolio</p>
+            <h1>Where I’ll post class assignments</h1>
+            <p class="project-note">
+                I am currently working on tracing recurring lyrical themes across ambient albums from the last decade. My latest data project assesses the execution of another project concerned with the underrepresentation of women in songwriting credits.
+            </p>
+            <ul class="portfolio-list">
+                <li></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

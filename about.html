@@ -5,245 +5,232 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Pedro Gallardo Nascimento</title>
     <style>
+        :root {
+            --bg-1: #f2f3f4;
+            --bg-2: #e7ebee;
+            --bg-3: #dfe5e8;
+            --stone: #2a3137;
+            --stone-2: #4f5a61;
+            --mist: #f7f5f2;
+            --muted: #637078;
+            --line: rgba(42, 49, 55, 0.16);
+            --shadow: rgba(31, 39, 45, 0.09);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Courier New', monospace;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a0033 50%, #0d2b45 100%);
-            color: #00ffff;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background:
+                radial-gradient(circle at top left, rgba(255,255,255,0.7), transparent 34%),
+                linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 42%, var(--bg-3) 100%);
+            color: var(--stone);
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Animated background elements */
-        .bg-grid {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(0deg, transparent 24%, rgba(255, 0, 255, 0.05) 25%, rgba(255, 0, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 0, 128, 0.05) 75%, rgba(255, 0, 128, 0.05) 76%, transparent 77%, transparent),
-                linear-gradient(90deg, transparent 24%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.05) 75%, rgba(0, 255, 255, 0.05) 76%, transparent 77%, transparent);
-            background-size: 50px 50px;
-            pointer-events: none;
-            z-index: 0;
-            animation: moveGrid 20s linear infinite;
-        }
-
-        @keyframes moveGrid {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(50px); }
-        }
-
-        /* Main content wrapper */
         .container {
             position: relative;
             z-index: 1;
-            max-width: 1000px;
+            max-width: 980px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 72px 22px 48px;
             min-height: 100vh;
         }
 
-        /* Header section */
         header {
-            margin-bottom: 40px;
+            margin-bottom: 28px;
             text-align: center;
         }
 
         h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #00ffff, #ff00ff, #ff1493, #00ffff);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 4s ease infinite;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            font-size: clamp(2.6rem, 5vw, 4.2rem);
+            font-weight: 600;
+            letter-spacing: -0.08em;
+            line-height: 0.96;
+            color: var(--stone);
+            margin-bottom: 14px;
         }
 
         .subtitle {
-            font-size: 1.3rem;
-            color: #ff00ff;
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
-            margin-bottom: 40px;
-            letter-spacing: 2px;
+            font-size: 0.8rem;
+            letter-spacing: 0.18rem;
+            text-transform: uppercase;
+            color: var(--stone-2);
         }
 
-        /* Navigation */
         nav {
-            margin-bottom: 50px;
-            text-align: center;
+            margin: 0 auto 38px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         nav a {
-            display: inline-block;
-            margin: 10px 15px;
-            padding: 12px 25px;
-            border: 2px solid #00ffff;
-            color: #00ffff;
+            padding: 11px 18px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--stone);
             text-decoration: none;
-            font-weight: bold;
+            font-size: 0.78rem;
+            letter-spacing: 0.16rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.18);
+            transition: all 0.35s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.42);
+            transform: translateY(-1px);
+            box-shadow: 0 12px 30px rgba(42, 49, 55, 0.08);
+        }
+
+        .content {
+            background: rgba(255,255,255,0.32);
+            border: 1px solid rgba(42, 49, 55, 0.12);
+            border-radius: 22px;
+            padding: 30px 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 20px 50px var(--shadow);
+            backdrop-filter: blur(12px);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
             position: relative;
             overflow: hidden;
         }
 
-        nav a::before {
-            content: '';
+        .content::before {
+            content: "";
             position: absolute;
-            top: 0;
-            left: -100%;
+            inset: 0 auto auto 0;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, #00ffff, transparent);
-            transition: left 0.5s ease;
-            z-index: -1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(42, 49, 55, 0.22), transparent);
         }
 
-        nav a:hover {
-            background: #00ffff;
-            color: #0a0e27;
-            box-shadow: 0 0 20px #00ffff, inset 0 0 20px #ff00ff;
-            border-color: #ff00ff;
-        }
-
-        nav a:hover::before {
-            left: 100%;
-        }
-
-        /* Main content */
-        .content {
-            background: rgba(10, 14, 39, 0.7);
-            border: 2px solid #ff00ff;
-            border-radius: 0;
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 0 30px rgba(255, 0, 255, 0.5), 
-                        inset 0 0 30px rgba(0, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
+        .content:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 24px 60px rgba(42, 49, 55, 0.12);
         }
 
         .content h2 {
-            font-size: 1.8rem;
-            color: #ff1493;
-            margin-bottom: 20px;
-            text-shadow: 0 0 15px #ff1493, 0 0 25px #ff00ff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: clamp(1.5rem, 2vw, 2rem);
+            color: var(--stone);
+            font-weight: 500;
+            letter-spacing: -0.04em;
+            margin-bottom: 16px;
         }
 
         .content p {
-            font-size: 1.1rem;
+            font-size: 1.04rem;
             line-height: 1.8;
-            color: #00ffff;
-            text-shadow: 0 0 5px #00ffff;
-            margin-bottom: 15px;
+            color: var(--stone-2);
+            margin-bottom: 12px;
         }
 
-        /* Section divider */
         .divider {
             width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #ff00ff, #00ffff, transparent);
-            margin: 30px 0;
-            box-shadow: 0 0 10px #ff00ff, 0 0 15px #00ffff;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(42,52,59,0.24), transparent);
+            margin: 24px 0;
         }
 
-        /* Social links */
+        .interests {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px 18px;
+            margin-top: 12px;
+        }
+
+        .interests li {
+            color: var(--stone-2);
+            padding-left: 18px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .interests li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--muted);
+        }
+
         .social-links {
-            margin-top: 40px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 14px;
             flex-wrap: wrap;
+            margin-top: 30px;
         }
 
         .social-links a {
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #ff00ff;
-            color: #ff00ff;
-            text-decoration: none;
             border-radius: 50%;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            font-size: 1.2rem;
+            border: 1px solid rgba(45, 42, 49, 0.18);
+            text-decoration: none;
+            color: var(--stone);
+            font-size: 0.8rem;
+            letter-spacing: 0.08rem;
+            background: rgba(255,255,255,0.2);
+            transition: all 0.35s ease;
         }
 
         .social-links a:hover {
-            background: #ff00ff;
-            color: #0a0e27;
-            box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
+            background: rgba(255,255,255,0.42);
+            transform: translateY(-2px);
+            box-shadow: 0 14px 24px rgba(42, 49, 55, 0.08);
         }
 
-        /* Footer */
         footer {
-            position: relative;
-            z-index: 1;
-            margin-top: 60px;
+            margin-top: 36px;
             padding-top: 20px;
-            border-top: 2px solid #00ffff;
-            color: #00ffff;
-            font-size: 0.9rem;
-            text-shadow: 0 0 5px #00ffff;
+            border-top: 1px solid rgba(42,52,59,0.18);
             text-align: center;
+            color: var(--muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.06rem;
         }
 
-        /* Responsive design */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-                letter-spacing: 1px;
+            .container {
+                padding-top: 52px;
             }
 
-            .subtitle {
-                font-size: 1rem;
-                letter-spacing: 1px;
+            nav {
+                gap: 8px;
             }
 
             nav a {
-                display: block;
-                margin: 8px 0;
+                width: 100%;
+                text-align: center;
             }
 
             .content {
-                padding: 25px;
+                padding: 24px 20px;
             }
 
-            .content h2 {
-                font-size: 1.4rem;
-            }
-
-            .content p {
-                font-size: 1rem;
+            .interests {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div class="bg-grid"></div>
-    
     <div class="container">
         <header>
             <h1>About</h1>
@@ -257,24 +244,28 @@
         </nav>
 
         <div class="content">
-            <h2>Who I Am</h2>
-            <p>Welcome to my corner of the digital world. I'm a developer and digital creator passionate about exploring the intersection of history, technology, and innovation.</p>
+            <h2>Who I am</h2>
+            <p>Welcome to my corner of the digital world. I am a developer and digital creator interested in the spaces where history, technology, and design meet.</p>
             <div class="divider"></div>
-            <p>My work spans academic research, creative coding projects, and digital humanities. I believe in using technology to tell stories, preserve knowledge, and create meaningful experiences.</p>
+            <p>My work spans academic inquiry, creative coding, and thoughtful digital experiences. I believe technology is most compelling when it helps us understand people, stories, and context more clearly.</p>
         </div>
 
         <div class="content">
-            <h2>Education & Experience</h2>
-            <p>I pursue knowledge across multiple disciplines, with a particular focus on history (HIST 280) and computer science. My background combines rigorous academic study with practical technical skills.</p>
-            <p>Whether it's researching historical topics, developing web applications, or exploring emerging technologies, I'm driven by curiosity and a desire to create something meaningful.</p>
+            <h2>Education & experience</h2>
+            <p>I study across disciplines with a strong interest in history, digital humanities, and systems thinking. My background combines academic rigor with practical creative development.</p>
+            <p>Whether I am researching a historical topic, building a web experience, or exploring emerging tools, I am driven by curiosity and a desire to make meaningful work.</p>
         </div>
 
         <div class="content">
             <h2>Interests</h2>
-            <p>• Digital Humanities and Historical Research</p>
-            <p>• Web Development & Design</p>
-            <p>• Technology & Society</p>
-            <p>• Creative Coding Projects</p>
+            <ul class="interests">
+                <li>Digital humanities</li>
+                <li>Historical research</li>
+                <li>Web development</li>
+                <li>Creative coding</li>
+                <li>Technology & society</li>
+                <li>Design thinking</li>
+            </ul>
         </div>
 
         <div class="social-links">
@@ -284,7 +275,7 @@
         </div>
 
         <footer>
-            <p>&copy; 2026 Pedro Gallardo Nascimento. All rights reserved. | Made with neon dreams and code</p>
+            <p>&copy; 2026 Pedro Gallardo Nascimento. All rights reserved.</p>
         </footer>
     </div>
 </body>
