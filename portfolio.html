@@ -67,9 +67,11 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            align-items: center;
         }
 
-        .main-nav a {
+        .main-nav a,
+        .main-nav .button-link {
             padding: 10px 16px;
             border: 1px solid rgba(42, 49, 55, 0.16);
             border-radius: 999px;
@@ -82,10 +84,15 @@
             transition: all 0.35s ease;
         }
 
-        .main-nav a:hover {
+        .main-nav a:hover,
+        .main-nav .button-link:hover {
             background: rgba(255,255,255,0.42);
             transform: translateY(-1px);
             box-shadow: 0 12px 30px rgba(42, 49, 55, 0.08);
+        }
+
+        .main-nav .button-link {
+            display: inline-block;
         }
 
         .portfolio-section {
@@ -162,6 +169,7 @@
             <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="portfolio.html">Portfolio</a>
+                <a class="button-link" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
             </nav>
         </div>
     </header>
