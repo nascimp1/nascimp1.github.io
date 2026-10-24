@@ -14,6 +14,7 @@
             --muted: #637078;
             --line: rgba(42, 49, 55, 0.16);
             --shadow: rgba(31, 39, 45, 0.09);
+            --link: #6a5b8a;
         }
 
         * {
@@ -133,25 +134,55 @@
             margin-bottom: 1rem;
         }
 
-        .project-note {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(42, 49, 55, 0.12);
-            color: var(--stone-2);
-            font-size: 1rem;
-            line-height: 1.8;
+        .section-block {
+            margin-top: 2.4rem;
         }
 
-        .project-note + .project-note {
-            margin-top: 2.2rem;
-        }
-
-        .list-label {
+        .section-title {
             display: block;
-            margin-top: 2.8rem;
-            margin-bottom: 0.75rem;
+            margin: 0 0 0.75rem;
             font-size: 0.72rem;
             letter-spacing: 0.18rem;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .project-grid {
+            display: grid;
+            gap: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .project-card {
+            display: block;
+            padding: 1rem 1rem 0.9rem;
+            border: 1px solid rgba(42, 49, 55, 0.12);
+            border-radius: 16px;
+            background: rgba(255,255,255,0.12);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 12px 28px rgba(31, 39, 45, 0.06);
+        }
+
+        .project-card a {
+            color: var(--link);
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.05rem;
+            line-height: 1.4;
+            margin-bottom: 0.35rem;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem 0.8rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.08rem;
             text-transform: uppercase;
             color: var(--muted);
         }
@@ -166,13 +197,12 @@
         .portfolio-list li {
             min-height: 3rem;
             border-bottom: 1px solid rgba(42, 49, 55, 0.12);
-            display: flex;
-            align-items: center;
         }
 
         .portfolio-list a {
-            color: var(--stone);
+            color: var(--link);
             text-decoration: none;
+            display: block;
             padding: 0.9rem 0;
             width: 100%;
             transition: opacity 0.2s ease;
@@ -205,19 +235,43 @@
     <main class="container page-content">
         <section class="portfolio-section">
             <p class="eyebrow">Portfolio</p>
-            <h1>Where I’ll post class assignments</h1>
-            <p class="project-note">
-                I am currently working on tracing recurring lyrical themes across ambient albums from the last decade.
-            </p>
-            <p class="project-note">
-                My latest data project analyzes the sources and overall execution of a visual essay about the absence of female songwriters in the last century.
-            </p>
+            <h1>Data Analyses</h1>
 
-            <span class="list-label">More data projects:</span>
-            <ul class="portfolio-list">
-                <li><a href="CS181Project%202%20Relational%20Data-1.html" target="_blank" rel="noopener noreferrer">Anglophone vs. Non-Anglophone Movies</a></li>
-                <li><a href="Final_project_DA-1.html" target="_blank" rel="noopener noreferrer">Illicit Drug Use across America</a></li>
-            </ul>
+            <div class="section-block">
+                <span class="section-title">Music Project</span>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <a href="DataHistoryProject-2.html" target="_blank" rel="noopener noreferrer">History of Female Songwriters</a>
+                        <div class="project-meta">
+                            <span>2026</span>
+                            <span>music</span>
+                            <span>data essay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <span class="section-title">Other Data Projects</span>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <a href="CS181Project%202%20Relational%20Data-1.html" target="_blank" rel="noopener noreferrer">Anglophone vs. Non-Anglophone Movies</a>
+                        <div class="project-meta">
+                            <span>2024</span>
+                            <span>film</span>
+                            <span>data viz</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <a href="Final_project_DA-1.html" target="_blank" rel="noopener noreferrer">Illicit Drug Use across America</a>
+                        <div class="project-meta">
+                            <span>2024</span>
+                            <span>us policy</span>
+                            <span>analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 </body>
